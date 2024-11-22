@@ -23,11 +23,10 @@ class LinkedList:
     def print_list(self):
         current_node = self.head
         while current_node:
-            print(current_node.data)
+            print(current_node.data, end=" ")
             current_node = current_node.next
         print("")
 
-    # On the right track, but the order is not correct
     def swapPairs(self, head: Optional[Node]) -> Optional[Node]:
         if head is None or head.next is None:
             return head
@@ -40,8 +39,6 @@ class LinkedList:
 
         return second_node
 
-
-
     def print_nodes(self):
         current_node = self.head
         while current_node:
@@ -50,11 +47,11 @@ class LinkedList:
 
 myList = LinkedList()
 
-for i in range(1, 101):
+for i in range(1, 11):
     myList.insert(i)
 
-myList.print_nodes()
-myList.swapPairs(myList.head)
 myList.print_list()
-myList.print_nodes()
+myList.head = myList.swapPairs(myList.head)
+myList.print_list()
+
 
